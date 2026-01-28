@@ -22,8 +22,29 @@ export default async function PastePage({
   if (maxViews !== null && views >= maxViews) notFound();
 
   return (
-    <main className="paste-page">
-      <pre className="paste-content">{data.content}</pre>
+    <main
+      style={{
+        maxWidth: "760px",
+        margin: "4rem auto",
+        padding: "2rem",
+        background: "#ffffff",
+        borderRadius: "10px",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+      }}
+    >
+      <pre
+        style={{
+          margin: 0,
+          whiteSpace: "pre-wrap",
+          wordBreak: "break-word",
+          fontFamily: "monospace",
+          fontSize: "0.95rem",
+          lineHeight: 1.6,
+          color: "#111",
+        }}
+      >
+        {data.content}
+      </pre>
     </main>
   );
 }
