@@ -9,6 +9,8 @@ export default function Home() {
   const [url, setUrl] = useState("");
 
   async function createPaste() {
+    if (!content.trim()) return;
+
     const res = await fetch("/api/pastes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -23,10 +25,17 @@ export default function Home() {
     setUrl(data.url);
   }
 
+  function resetForm() {
+    setContent("");
+    setTtl("");
+    setMaxViews("");
+    setUrl("");
+  }
+
   return (
     <>
       <textarea
-        placeholder="Paste your text here..."
+        placeholder="Paste your text here…"
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />
@@ -46,13 +55,23 @@ export default function Home() {
         />
       </div>
 
-      <button onClick={createPaste}>Create Paste</button>
+      <div className="button-row">
+        <button onClick={createPaste}>Create Paste</button>
+        <button className="secondary" onClick={resetForm}>
+          Reset
+        </button>
+      </div>
 
       {url && (
         <div className="share-box">
-          <strong>Shareable URL:</strong>
-          <br />
-          <a href={url}>{url}</a>
+          <span className="share-label">Shareable link</span>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {url}
+          </a>
         </div>
       )}
     </>

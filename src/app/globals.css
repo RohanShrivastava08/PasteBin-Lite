@@ -101,3 +101,51 @@ button:hover {
   color: #0066cc;
   text-decoration: none;
 }
+
+/* Buttons */
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+button.secondary {
+  background: #e5e5e5;
+  color: #111;
+}
+
+button.secondary:hover {
+  opacity: 0.85;
+}
+
+/* Share link box */
+.share-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 0.4rem;
+}
+
+.share-box a {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Paste view page */
+.paste-page {
+  max-width: 720px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.paste-content {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

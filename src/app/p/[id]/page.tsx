@@ -10,10 +10,7 @@ export default async function PastePage({
   const { id } = await params;
 
   const data = await redis.hGetAll(`paste:${id}`);
-
-  if (!data || !data.id) {
-    notFound();
-  }
+  if (!data || !data.id) notFound();
 
   const expiresAt = data.expires_at ? Number(data.expires_at) : null;
   const maxViews = data.max_views ? Number(data.max_views) : null;
@@ -21,19 +18,12 @@ export default async function PastePage({
 
   const now = await getNowMs();
 
-  if (expiresAt !== null && now >= expiresAt) {
-    notFound();
-  }
-
-  if (maxViews !== null && views >= maxViews) {
-    notFound();
-  }
+  if (expiresAt !== null && now >= expiresAt) notFound();
+  if (maxViews !== null && views >= maxViews) notFound();
 
   return (
-    <main style={{ padding: "2rem", fontFamily: "monospace" }}>
-      <pre style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
-        {data.content}
-      </pre>
+    <main className="paste-page">
+      <pre className="paste-content">{data.content}</pre>
     </main>
   );
 }
