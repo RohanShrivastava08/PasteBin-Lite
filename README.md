@@ -39,6 +39,7 @@
 
 ## 📁 Project Structure
 
+~~~bash
 src/
 ├── app/
 │ ├── api/
@@ -53,6 +54,7 @@ src/
 │ ├── redis.ts # Persistence layer
 │ ├── time.ts # Time abstraction (deterministic testing)
 │ └── id.ts # Unique ID generator
+~~~
 
 ---
 
