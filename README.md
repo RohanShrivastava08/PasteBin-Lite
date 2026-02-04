@@ -39,6 +39,7 @@
 
 ## 📁 Project Structure
 
+
 ~~~bash
 src/
 ├── app/
@@ -55,6 +56,7 @@ src/
 │ ├── time.ts # Time abstraction (deterministic testing)
 │ └── id.ts # Unique ID generator
 ~~~
+
 
 ---
 
