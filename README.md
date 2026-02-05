@@ -214,4 +214,5 @@ curl -X POST https://your-app.vercel.app/api/pastes \
 - Designed to pass automated grading systems
 
 📄 License
-This project was created for evaluation purposes as part of a take-home exercise.
+
+- This project was created for evaluation purposes as part of a take-home exercise.
